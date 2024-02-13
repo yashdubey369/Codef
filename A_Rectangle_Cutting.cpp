@@ -27,17 +27,20 @@ signed main()
     cin >> t;
     while (t--)
     {
-        int n,ans=0;
-        cin>>n;
-        string s;
-        cin>>s;
-        set<char>st;
-        f(i,n){
-            if(st.find(s[i])==st.end()) {
-                st.insert(s[i]);
-                ans+=n-i;
+        int n,m;
+        cin>>n>>m;
+        if(n%2==0 && m%2==0) cout<<"Yes"<<endl;
+        else {
+            if(n%2==0 && m%2!=0){
+                if(n/2==m) cout<<"No"<<endl;
+                else cout<<"Yes"<<endl;
             }
+            else if(n%2!=0 && m%2==0){
+                if(m/2==n) cout<<"No"<<endl;
+                else cout<<"Yes"<<endl;
+            }
+            else 
+            cout<<"No"<<endl;
         }
-        cout<<ans<<endl;
     }
 }
