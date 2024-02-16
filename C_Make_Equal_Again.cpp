@@ -21,15 +21,6 @@ typedef vector<int> vi;
 typedef vector<pi> vpi;
 typedef vector<vi> vvi;
 
-int check(int h, vi a)
-{
-    int n = a.size(), ans = 0;
-    for (int i = 0; i < n; i++)
-    {
-        ans += max(1LL * 0, (h - a[i]));
-    }
-    return ans;
-}
 signed main()
 {
     ios::sync_with_stdio(0);
@@ -38,28 +29,23 @@ signed main()
     cin >> t;
     while (t--)
     {
-        int n, m;
-        cin >> n >> m;
+        int n;
+        cin >> n;
         vi a(n);
         inp(a);
-        int l = 1, r = 1e10;
-        // f(i,n){
-        //     r=max(r,a[i]);
-        // }
-        int ans = 0;
-        while (l <= r)
+        int l = 0, r = n - 1;
+        if (n == 1)
         {
-            int mid = l + (r - l) / 2;
-            if (check(mid, a) > m)
-            {
-                r = mid - 1;
-            }
-            else
-            {
-                ans = mid;
-                l = mid + 1;
-            }
+            cout << 0 << endl;
+            continue;
         }
-        cout << ans << endl;
+        while (a[l] == a[0])
+            l++;
+        while (a[r] == a[n - 1])
+            r--;
+        if (a[0] != a[n - 1])
+            cout << min(n - l, r + 1)<<endl;
+        else
+            cout << max(r - l + 1,0LL) << endl;
     }
 }

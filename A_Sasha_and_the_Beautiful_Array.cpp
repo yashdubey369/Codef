@@ -27,22 +27,15 @@ signed main()
     cin >> t;
     while (t--)
     {
-        int n,x,y,sumx=0,sumy=0;
-        cin>>n>>x>>y;
-        int l=1,r=n;
-        for(int i=1;i<=n;i++){
-            if(i%x==0 && i%y==0) continue;
-            else{
-                if(i%x==0) {
-                    sumx+=r;
-                    r--;
-                }
-                else if(i%y==0){
-                    sumy+=l;
-                    l++;
-                }
-            }
+        int n;
+        cin>>n;
+        vi a(n),b;
+        inp(a);
+        sort(all(a));
+        int ans=0;
+        fa(i,1,n){
+            ans+=a[i]-a[i-1];
         }
-        cout<<sumx-sumy<<endl;
+        cout<<ans<<endl;
     }
 }

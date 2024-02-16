@@ -30,7 +30,9 @@ signed main()
         vi a(n);
         inp(a);
         int j=2,ans=0;
-        while(true){
+        while(
+            
+        ){
             set<int> st;
             f(i,n){
                 st.insert(a[i]%j);

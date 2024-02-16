@@ -27,22 +27,13 @@ signed main()
     cin >> t;
     while (t--)
     {
-        int n,x,y,sumx=0,sumy=0;
+        int n,x,y;
         cin>>n>>x>>y;
-        int l=1,r=n;
-        for(int i=1;i<=n;i++){
-            if(i%x==0 && i%y==0) continue;
-            else{
-                if(i%x==0) {
-                    sumx+=r;
-                    r--;
-                }
-                else if(i%y==0){
-                    sumy+=l;
-                    l++;
-                }
-            }
+        vi a(n);
+        inp(a);
+        map<pair<int,int>,int> m;
+        f(i,n){
+            if(m.find({}))
         }
-        cout<<sumx-sumy<<endl;
     }
 }

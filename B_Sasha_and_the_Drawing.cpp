@@ -27,22 +27,14 @@ signed main()
     cin >> t;
     while (t--)
     {
-        int n,x,y,sumx=0,sumy=0;
-        cin>>n>>x>>y;
-        int l=1,r=n;
-        for(int i=1;i<=n;i++){
-            if(i%x==0 && i%y==0) continue;
-            else{
-                if(i%x==0) {
-                    sumx+=r;
-                    r--;
-                }
-                else if(i%y==0){
-                    sumy+=l;
-                    l++;
-                }
-            }
+        int n,m;
+        cin>>n>>m;
+        if(m==4*n-2){
+            cout<<n+n<<endl;
         }
-        cout<<sumx-sumy<<endl;
+        else{
+            if((m&1)) cout<<m/2+1<<endl;
+            else cout<<m/2<<endl;
+        }
     }
 }
