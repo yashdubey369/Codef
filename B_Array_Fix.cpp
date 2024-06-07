@@ -27,25 +27,5 @@ signed main()
     cin >> t;
     while (t--)
     {
-        int n,flag=1;
-        cin>>n;
-        vi a(n);
-        inp(a);
-        frev(i,n-1){
-            if(a[i+1]<a[i]){
-                if(a[i+1]<a[i]%10) {flag=0;
-                break;}
-                else{
-                    if(a[i]%10<a[i]/10) {
-                        // cout<<a[i]%10<<" "<<a[i]%100<<endl;
-                        flag=0;
-                        break;
-                    }
-                    else a[i]/=10;
-                }
-            }
-        }
-        if(flag) cout<<"YES"<<endl;
-        else cout<<"NO"<<endl;
     }
 }

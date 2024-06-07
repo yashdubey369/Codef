@@ -2,11 +2,13 @@
 using namespace std;
 
 #define int long long int
-#define fa(i,a,n) for (int i = a; i < n; i++)
-#define f(i, n) fa(i,0,n)
-#define frev(i,n) for(int i=n-1;i>=0;i--)
-#define fitr(i,m) for(auto i:m)
-#define inp(x) for(int i=0;i<n;i++) cin>>x[i];
+#define fa(i, a, n) for (int i = a; i < n; i++)
+#define f(i, n) fa(i, 0, n)
+#define frev(i, n) for (int i = n - 1; i >= 0; i--)
+#define fitr(i, m) for (auto i : m)
+#define inp(x)                  \
+    for (int i = 0; i < n; i++) \
+        cin >> x[i];
 #define pb push_back
 #define mp make_pair
 #define fi first
@@ -27,14 +29,16 @@ signed main()
     cin >> t;
     while (t--)
     {
-        int n,m;
-        cin>>n>>m;
-        if(m==4*n-2){
-            cout<<n+n<<endl;
-        }
-        else{
-            if((m&1)) cout<<m/2+1<<endl;
-            else cout<<m/2<<endl;
+        int n, k;
+        cin >> n >> k;
+        if (k == 4 * n - 2)
+            cout << 2 * n << endl;
+        else
+        {
+            if (k % 2)
+                cout << (k / 2) + 1 << endl;
+            else
+                cout << (k / 2) << endl;
         }
     }
 }
