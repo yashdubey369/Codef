@@ -29,9 +29,10 @@ signed main()
     {
         int n;
         cin>>n;
-        vi a(32);
-        
-
-
+        vi a(n);
+        inp(a);
+        int ans=0;
+        f(i,n) ans+=abs(a[i]);
+        cout<<ans<<endl;
     }
 }

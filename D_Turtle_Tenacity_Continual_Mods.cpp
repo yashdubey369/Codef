@@ -27,11 +27,19 @@ signed main()
     cin >> t;
     while (t--)
     {
-        int n;
+        int n,flag=0;
         cin>>n;
-        vi a(32);
-        
-
-
+        vi a(n);
+        inp(a);
+        map<int,int> m;
+        f(i,n)m[a[i]]++;
+        fitr(i,m){
+            if(i.se>1 && (i.fi&1)){
+                flag=1;
+                break;
+            }
+        }
+        if(flag)cout<<"NO"<<endl;
+        else cout<<"YES"<<endl;
     }
 }

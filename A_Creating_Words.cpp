@@ -27,11 +27,9 @@ signed main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin>>n;
-        vi a(32);
-        
-
-
+        string a,b;
+        cin>>a>>b;
+        swap(a[0],b[0]);
+        cout<<a<<" "<<b<<endl;
     }
 }

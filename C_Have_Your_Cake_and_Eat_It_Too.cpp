@@ -29,9 +29,24 @@ signed main()
     {
         int n;
         cin>>n;
-        vi a(32);
-        
-
+        vi a(n),b(n),c(n);
+        inp(a);
+        inp(b);
+        inp(c);
+        int suma=0,sumb=0,sumc=0;
+        int tot=0;
+        int la,ra,lb,rb,lc,rc;
+        f(i,n) tot+=a[i];
+        if(tot%3) tot=(tot/3)+1;
+        else tot/=3;
+        f(i,n){
+            suma+=a[i];
+            sumb+=b[i];
+            sumc+=c[i];
+            if(suma>=tot){
+                
+            }   
+            }
 
     }
 }

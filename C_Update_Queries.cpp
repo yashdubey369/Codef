@@ -27,11 +27,25 @@ signed main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin>>n;
-        vi a(32);
-        
-
-
+         // int n,m;
+        // cin>>n>>m;
+        // string s;
+        // cin>>s;
+        // vi b(m);
+        // inp(b);
+        // string c;
+        // cin>>c;
+        // string temp('#',n);
+        // f(i,m){
+        //     s[b[i]]='#';
+        //     temp[b[i]]=c[i];
+        // }
+        // sort(all(temp));
+        // f(i,n){
+        //     if(s[i]=='#' && temp[i]!='#'){
+        //         s[i]=temp[i];
+        //     }
+        // }
+        // cout<<s<<endl;
     }
 }

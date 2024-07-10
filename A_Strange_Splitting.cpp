@@ -29,9 +29,37 @@ signed main()
     {
         int n;
         cin>>n;
-        vi a(32);
-        
-
-
+        vi a(n);
+        inp(a);
+        int flag=0,cnt=0;
+        fa(i,1,n){
+            if(a[i]!=a[i-1]){ 
+                flag=1;
+            }
+        }
+        if(!flag){
+            cout<<"NO"<<endl;
+            continue;
+        }
+        cout<<"YES"<<endl;
+        flag=0;
+        fa(i,2,n){
+            if(a[i]!=a[i-1]){ 
+                flag=1;
+            }
+        }
+        if(!flag){
+            cout<<"RR";
+            fa(i,2,n){
+                cout<<"B";
+            }
+        }
+        else{
+            cout<<"R";
+            fa(i,1,n){
+                cout<<"B";
+            }
+        }
+        cout<<endl;
     }
 }

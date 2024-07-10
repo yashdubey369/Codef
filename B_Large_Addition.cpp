@@ -29,9 +29,31 @@ signed main()
     {
         int n;
         cin>>n;
-        vi a(32);
-        
-
-
+        // cout<<n<<endl;
+        vi a;
+        while(n){
+            a.pb(n%10);
+            n/=10;
+        }
+        if(a[a.size()-1]!=1){
+            cout<<"NO"<<endl;
+            continue;
+        }
+        for(int i=a.size()-1;i>0;i--){
+            // cout<<a[i]<<" ";
+            a[i]-=1;
+            a[i-1]+=10;
+        }
+        int mn=INT_MAX,mx=INT_MIN;
+        for(int i=0;i<a.size()-1;i++){
+            // cout<<a[i]<<" ";
+            mn=min(mn,a[i]);
+            mx=max(mx,a[i]);
+        }
+        // cout<<endl;
+        if(mx<=18 && mn>=10){
+            cout<<"YES"<<endl;
+        }
+        else cout<<"NO"<<endl;
     }
 }

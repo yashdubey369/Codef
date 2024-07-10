@@ -29,9 +29,7 @@ signed main()
     {
         int n;
         cin>>n;
-        vi a(32);
-        
-
-
+        f(i,n) cout<<i+1<<" ";
+        cout<<endl;
     }
 }

@@ -29,9 +29,7 @@ signed main()
     {
         int n;
         cin>>n;
-        vi a(32);
-        
-
-
+        if(n==3) cout<<3<<endl;
+        else cout<<2<<endl;
     }
 }

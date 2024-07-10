@@ -27,11 +27,9 @@ signed main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin>>n;
-        vi a(32);
-        
-
-
+        int x,y;
+        cin>>x>>y;
+        if(( y>=-1)) cout<<"YES"<<endl;
+        else cout<<"NO"<<endl;
     }
 }

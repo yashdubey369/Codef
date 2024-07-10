@@ -29,9 +29,13 @@ signed main()
     {
         int n;
         cin>>n;
-        vi a(32);
-        
-
-
+        vi a(n);
+        inp(a);
+        int sum=0,mn=0;
+        f(i,n){
+            sum+=a[i];
+            if(sum<mn) mn=(sum);
+        }
+        cout<<2*abs(mn)+sum<<endl;
     }
 }

@@ -29,9 +29,14 @@ signed main()
     {
         int n;
         cin>>n;
-        vi a(32);
-        
-
-
+        vi a(n);
+        inp(a);
+        int mx=0;
+        f(i,n) {
+            if(mx<a[i]&&i!=n-1){
+                mx=a[i];
+            }
+        }
+        cout<<mx+a[n-1]<<endl;
     }
 }

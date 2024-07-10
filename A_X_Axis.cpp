@@ -27,11 +27,11 @@ signed main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin>>n;
-        vi a(32);
-        
-
-
+        vi v(3);
+        f(i,3){
+            cin>>v[i];
+        }
+        sort(all(v));
+        cout<< v[2]-v[0]<<endl;
     }
 }

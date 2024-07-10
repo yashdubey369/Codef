@@ -29,9 +29,21 @@ signed main()
     {
         int n;
         cin>>n;
-        vi a(32);
-        
-
+        vi a(n);
+        inp(a);
+        set<int> s;
+        int sum=0;
+        f(i,n){
+            s.insert(a[i]%3);
+            sum+=a[i];    
+        }
+        if(sum%3==0){
+            cout<<0<<endl;
+            continue;
+        }
+        int r=sum%3;
+        if(s.find(r)!=s.end()) cout<<1<<endl;
+        else cout<<3-r<<endl;
 
     }
 }
