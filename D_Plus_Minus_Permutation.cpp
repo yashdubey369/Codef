@@ -1,47 +1,45 @@
-class Solution {
-public:
-    
-    int solve(int i,int j,int sum,vector<int>&a,vector<vector<int>>&dp){
-        
-        if(i>=j) return 0;
-        
-        if(dp[i][j]!=-1) return dp[i][j];
-        
-        int p1=0;
-        int p2=0;
-        int p3=0;
-        
-        if(i+1<=j && a[i]+a[i+1]==sum){
-            p1=1+solve(i+2,j,sum,a,dp);
-        }
-        
-        if(j-1>=i && a[j]+a[j-1]==sum){
-            p2=1+solve(i,j-2,sum,a,dp);
-        }
-        
-        if(a[i]+a[j]==sum){
-            p3=1+solve(i+1,j-1,sum,a,dp);
-        }
-        
-        
-        return dp[i][j]=max(p1,max(p2,p3));
-        
+#include <bits/stdc++.h>
+using namespace std;
+
+#define int long long int
+#define fa(i, a, n) for (int i = a; i < n; i++)
+#define f(i, n) fa(i, 0, n)
+#define frev(i, n) for (int i = n - 1; i >= 0; i--)
+#define fitr(i, m) for (auto i : m)
+#define inp(x)                  \
+    for (int i = 0; i < n; i++) \
+        cin >> x[i];
+#define pb push_back
+#define mp make_pair
+#define fi first
+#define se second
+#define all(x) x.begin(), x.end()
+#define clr(x) memset(x, 0, sizeof(x))
+
+typedef pair<int, int> pi;
+typedef vector<int> vi;
+typedef vector<pi> vpi;
+typedef vector<vi> vvi;
+
+signed main()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int n, x, y;
+        cin >> n >> x >> y;
+        int sum = 0;
+        int m = (x * y) / __gcd(x, y);
+        x = (n / x) - (n / m);
+        y = (n / y) - (n / m);
+
+        sum += (x * (2 * n - (x - 1))) / 2;
+        sum -= y * (y + 1) / 2;
+
+        cout << sum << endl;
+        // cout<<endl;
     }
-    int maxOperations(vector<int>& a) {
-        
-        int n=a.size();
-         vector<vector<int>>dp1(n,vector<int>(n,-1));
-         vector<vector<int>>dp2(n,vector<int>(n,-1));
-         vector<vector<int>>dp3(n,vector<int>(n,-1));
-         
-        
-         int p1=solve(2,n-1,(a[0]+a[1]),a,dp1);
-         int p2=solve(0,n-3,(a[n-1]+a[n-2]),a,dp2);
-         int p3=solve(1,n-2,(a[0]+a[n-1]),a,dp3);
-        
-        return 1+max(p1,max(p2,p3));
-        
-        
-        
-    }
-};
+}

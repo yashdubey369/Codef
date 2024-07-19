@@ -1,52 +1,58 @@
 #include <bits/stdc++.h>
-#define int long long int
 using namespace std;
-void yash(int n,int k){
-       
-}
-// int n,k ;
-signed main() {
+
+#define int long long int
+#define fa(i, a, n) for (int i = a; i < n; i++)
+#define f(i, n) fa(i, 0, n)
+#define frev(i, n) for (int i = n - 1; i >= 0; i--)
+#define fitr(i, m) for (auto i : m)
+#define inp(x)                  \
+    for (int i = 0; i < n; i++) \
+        cin >> x[i];
+#define pb push_back
+#define mp make_pair
+#define fi first
+#define se second
+#define all(x) x.begin(), x.end()
+#define allr(x) x.rbegin(), x.rend()
+#define clr(x) memset(x, 0, sizeof(x))
+
+typedef pair<int, int> pi;
+typedef vector<int> vi;
+typedef vector<pi> vpi;
+typedef vector<vi> vvi;
+
+signed main()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
     int t;
     cin >> t;
-
-    while (t--) {
-        int n,k;
-        cin>>n>>k;
-        
-    //    yash(n,k);
-     vector<vector<int>>y(n+1,vector<int>(n+1,0));
-        // int y[n+1][n+1]={0};
-        vector<int>d(n+1,0);
-        vector<int>adj(n+1);
-
-        int ind=1;
-        while(ind<=n){
-            d[ind]=0 ;
-            y[ind]={};
-            ind++;
+    while (t--)
+    {
+        int n, k;
+        cin >> n >> k;
+        vi a(n), l(k, -1);
+        inp(a);
+        unordered_map<int, vector<int>> m;
+        f(i, n)
+        {
+            m[a[i] - 1].pb(i - l[a[i] - 1] - 1);
+            l[a[i] - 1] = i;
         }
-        ind=1;
-        while(ind<=n){
-            cin>>adj[ind];
-            y[adj[ind]].push_back(ind-d[adj[ind]]-1);
-            d[adj[ind]] = ind ;
-            ind++;
+        f(i, k)
+        {
+            m[i].pb(n - l[i] - 1);
         }
-        
-        
-        
-        int ans =INT_MAX;
-        ind=1;
-        while(ind<=k){
-            y[ind].push_back(n-d[ind]);
-            sort(y[ind].rbegin(),y[ind].rend() );
-            int res = y[ind][0]/2 ;
-            if(y[ind].size() >=2) res = max(res,y[ind][1]);
-            
-            ans = min(ans,res);
-            ind++;
+        int ans = n;
+        fitr(i, m)
+        {
+            sort(all(i.se));
+            int j = i.se[i.se.size() - 1] / 2;
+            int y = j;
+            if (i.se.size() > 1)
+                ans = min(ans, max(j, i.se[i.se.size() - 2]));
         }
-        cout<<ans<<endl;
+        cout << ans << endl;
     }
-   return 0;
 }
